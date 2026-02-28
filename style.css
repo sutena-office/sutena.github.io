@@ -1,0 +1,930 @@
+/* リセットとベース設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ファーストビュー */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 68, 68, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(68, 138, 255, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.pre-title {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.main-catch {
+    font-size: 56px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    letter-spacing: 2px;
+}
+
+.catch-line1 {
+    display: block;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.catch-line2 {
+    display: block;
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 64px;
+    letter-spacing: 8px;
+}
+
+.sub-catch {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 50px;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.warning-box {
+    background: rgba(255, 107, 107, 0.15);
+    border: 2px solid #ff6b6b;
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 60px;
+    display: inline-block;
+}
+
+.warning-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.seminar-info {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 16px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.seminar-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.seminar-details {
+    margin-bottom: 40px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.detail-value.price {
+    color: #ff6b6b;
+    font-size: 28px;
+}
+
+.detail-value.limited {
+    color: #ff6b6b;
+    font-size: 18px;
+}
+
+/* CTAボタン */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    letter-spacing: 2px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+}
+
+.cta-button.secondary {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+}
+
+.cta-button.secondary:hover {
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.5);
+}
+
+.cta-button.final {
+    font-size: 24px;
+    padding: 25px 80px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* セクション共通 */
+.section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+    letter-spacing: 2px;
+}
+
+.section-title.dark {
+    color: #fff;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #555;
+    font-weight: 500;
+}
+
+.section-subtitle.dark {
+    color: #fff;
+    opacity: 0.9;
+}
+
+/* セクション1: 自分事化 */
+.recall-section {
+    background: #f8f9fa;
+}
+
+.employee-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.employee-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+}
+
+.employee-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.employee-type {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.question-box {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.question {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+
+.reveal-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.reveal-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.reveal-text {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.reveal-text .highlight {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.reveal-conclusion {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* セクション2: 経営損失 */
+.loss-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+}
+
+.loss-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.loss-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.loss-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.loss-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.loss-label {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.total-loss {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.loss-amount {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.amount-emphasis {
+    color: #ff6b6b;
+    font-size: 36px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.danger-alert {
+    background: rgba(255, 107, 107, 0.2);
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+}
+
+.alert-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-text {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ff6b6b;
+    letter-spacing: 2px;
+}
+
+/* セクション3: 春の危険性 */
+.spring-danger {
+    background: #fff;
+}
+
+.danger-factors {
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+.factor-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.factor-dot {
+    width: 12px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.stress-text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 60px;
+}
+
+.warning-message {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.warning-strong {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.warning-conclusion {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* セクション4: セミナー内容 */
+.content-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.content-list {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.content-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.content-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.check-icon {
+    font-size: 28px;
+    margin-right: 20px;
+    color: #4ade80;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.content-item p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.promise-box {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.promise-text {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.no-theory {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.practical {
+    font-size: 32px;
+    font-weight: 900;
+    color: #4ade80;
+    letter-spacing: 2px;
+}
+
+/* セクション5: 不参加リスク */
+.risk-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+}
+
+.timeline {
+    max-width: 500px;
+    margin: 0 auto 60px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+}
+
+.timeline-month {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.timeline-event {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #4a90e2;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.timeline-event.danger {
+    border-left-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+}
+
+.timeline-event p {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.timeline-arrow {
+    text-align: center;
+    font-size: 36px;
+    color: #ff6b6b;
+    margin: 20px 0;
+}
+
+.pattern-text {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+
+.urgency-box {
+    background: rgba(255, 107, 107, 0.2);
+    border: 3px solid #ff6b6b;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+}
+
+.urgency-text {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.now-emphasis {
+    color: #ff6b6b;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+/* セクション6: 対象者 */
+.target-section {
+    background: #f8f9fa;
+}
+
+.target-list {
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+.target-item {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.target-item:hover {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    transform: translateX(10px);
+}
+
+.target-marker {
+    color: #4a90e2;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.target-conclusion {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+/* セクション7: 限定性 */
+.limited-section {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.reason-text {
+    font-size: 24px;
+    margin-bottom: 60px;
+    opacity: 0.95;
+}
+
+.limited-box {
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid #fff;
+    border-radius: 16px;
+    padding: 50px;
+    margin-bottom: 60px;
+    display: inline-block;
+}
+
+.limited-number {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.serious-text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* クロージング */
+.closing-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.final-question {
+    margin-bottom: 60px;
+}
+
+.question-line {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.decision-text {
+    font-size: 32px;
+    margin-bottom: 80px;
+    font-weight: 500;
+}
+
+.today-emphasis {
+    color: #ff6b6b;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.final-seminar-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 50px;
+    margin-bottom: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.final-details {
+    margin-bottom: 0;
+}
+
+.final-date,
+.final-price,
+.final-limited {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.final-price {
+    color: #4ade80;
+    font-size: 32px;
+}
+
+.final-limited {
+    color: #ff6b6b;
+}
+
+/* 申込フォーム */
+.form-section {
+    background: #f8f9fa;
+    padding: 100px 20px;
+}
+
+.form-title {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #1a1a2e;
+}
+
+.application-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.required {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    letter-spacing: 2px;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+}
+
+/* フッター */
+.footer {
+    background: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .main-catch {
+        font-size: 36px;
+    }
+    
+    .catch-line1 {
+        font-size: 28px;
+    }
+    
+    .catch-line2 {
+        font-size: 42px;
+    }
+    
+    .sub-catch {
+        font-size: 18px;
+    }
+    
+    .seminar-info {
+        padding: 30px 20px;
+    }
+    
+    .seminar-title {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+    }
+    
+    .cta-button {
+        font-size: 16px;
+        padding: 15px 40px;
+    }
+    
+    .cta-button.final {
+        font-size: 18px;
+        padding: 18px 50px;
+    }
+    
+    .employee-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .question {
+        font-size: 24px;
+    }
+    
+    .reveal-text {
+        font-size: 24px;
+    }
+    
+    .reveal-text .highlight {
+        font-size: 28px;
+    }
+    
+    .loss-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .content-item p {
+        font-size: 16px;
+    }
+    
+    .question-line {
+        font-size: 24px;
+    }
+    
+    .decision-text {
+        font-size: 20px;
+    }
+    
+    .today-emphasis {
+        font-size: 32px;
+    }
+    
+    .application-form {
+        padding: 30px 20px;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
