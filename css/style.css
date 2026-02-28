@@ -663,6 +663,34 @@ body {
     font-weight: 700;
 }
 
+/* セクション8: 講師 */
+.profile-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.profile-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-text h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.profile-image {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
 /* クロージング */
 .closing-section {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
