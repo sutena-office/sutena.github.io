@@ -35,6 +35,25 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
     // コンソールにデータ表示（実際の実装ではAPIに送信）
     console.log('申込データ:', formData);
     
+    // ★★★ ここを追加 ★★★
+    fetch("https://script.google.com/macros/s/AKfycbzhuIIyAZue8DCw7x_c0LaUvJjqkFvcgwWzseckz__-Z0Qn2RrQ9fbnj_woFqS3bEjM4A/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("お申込みありがとうございます！確認メールをお送りしました。");
+        document.getElementById('applicationForm').reset();
+    })
+    .catch(error => {
+        alert("送信エラーが発生しました。");
+        console.error("エラー:", error);
+    });
+});
+
     // フォームリセット
     this.reset();
     
