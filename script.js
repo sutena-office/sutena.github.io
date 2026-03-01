@@ -15,7 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // フォーム送信処理
 document.getElementById('applicationForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // フォームデータ取得
     const formData = {
         company: document.getElementById('company').value,
@@ -28,36 +28,32 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
         message: document.getElementById('message').value,
         submittedAt: new Date().toISOString()
     };
-    
-    // 確認メッセージ
+
     alert(`お申込みありがとうございます！\n\n【申込内容】\n会社名: ${formData.company}\nお名前: ${formData.name}\n希望日程: ${formData.date}\n\n確認メールをお送りいたしますので、しばらくお待ちください。`);
-    
-    // コンソールにデータ表示（実際の実装ではAPIに送信）
-    console.log('申込データ:', formData);
-    
-    // ★★★ ここを追加 ★★★
+
+    // Apps Scriptに送信
     fetch("https://script.google.com/macros/s/AKfycbzhuIIyAZue8DCw7x_c0LaUvJjqkFvcgwWzseckz__-Z0Qn2RrQ9fbnj_woFqS3bEjM4A/exec", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(formData)
-})
-.then(response => response.text())
-.then(data => {
-    // ① ユーザーへの確認メッセージ
-    alert("お申込みありがとうございます！確認メールをお送りしました。");
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // 確認メール送信完了の通知
+        alert("お申込みありがとうございます！確認メールをお送りしました。");
 
-    // ② フォームリセット
-    document.getElementById('applicationForm').reset();
+        // フォームリセット
+        document.getElementById('applicationForm').reset();
 
-    // ③ 本番決済ページにリダイレクト
-    window.location.href = "https://univa.cc/bBtYj8"; // ←ここを本番リンクに差し替え
-})
-.catch(error => {
-    alert("送信エラーが発生しました。");
-    console.error("エラー:", error);
-});
+        // ★ 本番決済ページにリダイレクト ★
+        window.location.href = "https://univa.cc/本番リンクID"; // ←ここを本番リンクに差し替え
+    })
+    .catch(error => {
+        alert("送信エラーが発生しました。");
+        console.error("エラー:", error);
+    });
 });
 
     // フォームリセット
