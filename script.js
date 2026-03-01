@@ -48,7 +48,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
         document.getElementById('applicationForm').reset();
 
         // ★ 本番決済ページにリダイレクト ★
-        window.location.href = "https://univa.cc/本番リンクID"; // ←ここを本番リンクに差し替え
+        window.location.href = "https://univa.cc/_jC2Mw"; // ←ここを本番リンクに差し替え
     })
     .catch(error => {
         alert("送信エラーが発生しました。");
