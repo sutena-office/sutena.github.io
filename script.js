@@ -62,7 +62,7 @@ document.getElementById('applicationForm').addEventListener('submit', function(e
         top: 0,
         behavior: 'smooth'
     });
-});
+;
 
 // スクロールアニメーション
 const observerOptions = {
